@@ -1,0 +1,45 @@
+
+@media (min-width: 576px) { 
+    header nav .logo
+{
+    width: 2.75rem;
+    height: 2.75rem;
+}
+
+    #main-content #quick-stats .stats-card
+{
+    padding: 1.25rem !important;
+}
+
+ }
+
+@media (min-width: 768px) { 
+
+.gap-md-12
+{
+    gap: .75rem !important;
+}
+.px-md-36
+{
+    padding-inline: 2.25rem;
+}
+header nav #addContactBtn
+{
+    padding-block: 10px;
+    padding-inline: 20px;
+}
+
+ }
+
+@media (min-width: 992px) { 
+
+.gx-lg-12
+{
+    --bs-gutter-x: 12px !important;
+}
+.px-lg-32
+{
+    padding-inline: 2rem !important;
+}
+
+}

@@ -1,0 +1,670 @@
+@import './font.css';
+
+
+body
+{
+    font-family: Inter, sans-serif;
+    background-color: rgb(248, 250, 252);
+}
+button,
+a
+{
+    font-family: inherit;
+}
+
+
+:root
+{
+    --color-gray-100: rgb(243, 244, 246);
+    --color-gray-400: rgb(153, 161, 175);
+    --color-gray-500: rgb(106, 114, 130);
+    --color-gray-600: rgb(74, 85, 101);
+    --color-gray-700: rgb(54, 65, 83);
+    --color-gray-900: rgb(16, 24, 40);
+    --color-blue-100: rgb(219, 234, 254);
+    --color-blue-700: rgb(20, 71, 230);
+    --color-emerald-100: rgb(208, 250, 229);
+    --color-emerald-600: rgb(0, 153, 102);
+    --color-violet-100: rgb(237, 233, 254);
+    --color-violet-600: rgb(127, 34, 254);
+    --color-rose-50: rgb(255, 241, 242);
+    --color-rose-500: rgb(255, 32, 86);
+    --color-rose-600: rgb(236, 0, 63);
+    --color-gray-50: rgb(249, 250, 251);
+}
+
+/* Shared Styles */
+/* Text & Typography */
+.fs-10
+{
+    font-size: .625rem;
+}
+.fs-12
+{
+    font-size: .75rem;
+}
+.fs-14
+{
+    font-size: .875rem ;
+}
+.fs-11
+{
+    font-size: 11px;
+}
+
+
+.text-gray-300 {
+    color: rgb(209, 213, 219);
+}
+.text-gray-400 {
+    color: var(--color-gray-400);
+}
+.text-gray-500 {
+    color: var(--color-gray-500);
+}
+.text-gray-600
+{
+    color: var(--color-gray-600);
+}
+.text-gray-700
+{
+    color: var(--color-gray-700);
+}
+.text-gray-900 {
+    color: var(--color-gray-900);
+}
+.text-rose-600 {
+    color: var(--color-rose-600);
+}
+.text-rose-500 {
+    color: var(--color-rose-500);
+}
+.text-emerald-600 {
+    color: var(--color-emerald-600);
+}
+.text-violet-600 {
+    color: var(--color-violet-600);
+}
+
+/* background color */
+.bg-rose-50 {
+    background-color: var(--color-rose-50);
+}
+.bg-rose-500 {
+    background-color: var(--color-rose-500);
+}
+.bg-gray-50 {
+    background-color: var(--color-gray-50);
+}
+.bg-gray-100 {
+    background-color: var(--color-gray-100);
+}
+.bg-emerald-100
+{
+    background-color: var(--color-emerald-100);
+}
+.bg-violet-100
+{
+    background-color: var(--color-violet-100);
+}
+.bg-blue-100
+{
+    background-color: var(--color-blue-100);
+}
+
+
+
+.icon-linear-orange
+{
+    background-image: linear-gradient(to right bottom, rgb(255, 185, 0) 0%, rgb(255, 105, 0) 100%);
+    box-shadow: 0 10px 15px -3px rgba(254, 154, 0, 0.251), 0 4px 6px -4px rgba(254, 154, 0, 0.251);
+}
+.icon-linear-blue
+{
+    background-image: linear-gradient(to right bottom, rgb(43, 127, 255) 0%, rgb(21, 93, 251) 100%);
+    box-shadow: 0 10px 15px -3px rgba(43, 127, 255, 0.251), 0 4px 6px -4px rgba(43, 127, 255, 0.251);
+}
+.icon-linear-red
+{
+    background-image: linear-gradient(to right bottom, rgb(255, 32, 86) 0%, rgb(231, 0, 11) 100%);
+    box-shadow: 0 10px 15px -3px rgba(255, 32, 86, 0.251), 0 4px 6px -4px rgba(255, 32, 86, 0.251);
+}
+/* Spaces */
+.gap-12
+{
+    gap: .75rem;
+}
+.gap-6
+{
+    gap: .375rem;
+}
+.mb-6
+{
+    margin-bottom: .375rem;
+}
+.py-80
+{
+    padding-block: 5rem;
+}
+/*  */
+.rounded-12
+{
+    border-radius: .75rem;
+}
+.inset-0
+{
+    inset: 0;
+}
+
+
+/* ........ Background Patterns....... */
+div.bg-pattern
+{
+    inset: 0;
+    z-index: -10;   
+}
+div.blur-circle
+{
+    filter: blur(64px);
+}
+
+/* ........ Header ...... */
+
+header nav .navbar-container
+{
+    height: 5rem;
+}
+header
+{
+    backdrop-filter: blur(20px);
+    background-color: rgba(255, 255, 255, 0.702);
+    border-bottom: .0625rem solid rgba(229, 231, 235, 0.5) !important;
+}
+header nav .logo
+{
+    background-image: linear-gradient(to right bottom, rgb(127, 34, 254) 0%, rgb(79, 57, 246) 100%);
+    box-shadow: 0 10px 15px -3px #8e51ff40, 0 4px 6px -4px #8e51ff40;
+    width: 2.5rem;
+    height: 2.5rem;
+    font-size: 1.125rem;
+}
+header nav #addContactBtn
+{
+    padding-block: .625rem;
+    background-image: linear-gradient(to right, rgb(127, 34, 254) 0%, rgb(79, 57, 246) 100%);
+    font-weight: 500;
+    transform: translate(0);
+    transition: all .2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+header nav #addContactBtn:hover
+{
+    box-shadow: 0 10px 15px -3px rgba(142, 81, 255, 0.302), 0 4px 6px -4px rgba(142, 81, 255, 0.302);
+    transform: translate(0px, -2px);
+}
+header nav button.bg-transparent
+{
+    width: 2.5rem;
+    height: 2.5rem;
+}
+header nav button.bg-transparent:hover
+{
+    background-color: var(--color-gray-100) !important;
+}
+header nav .img-cont
+{
+    width: 2.5rem;
+    height: 2.5rem;
+}
+.modal button .btn-close
+{
+    background-image: none !important;
+}
+
+#contactModal .modalBackdrop
+{
+    background-color: rgba(16, 24, 40, 0.6);
+    backdrop-filter: blur(4px);
+}
+#contactModal .modalBody
+{
+    width: 32rem;
+    max-height: 90vh;
+    scrollbar-width: none;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.251);
+}
+#contactModal .modalHeader
+{
+    border-bottom: .0625rem solid var(--color-gray-100);
+}
+#contactModal #closeModalBtn
+{
+    width: 2.25rem;
+    height: 2.25rem;
+    border-radius: .5rem;
+}
+#contactModal #closeModalBtn:hover
+{
+    background-color: var(--color-gray-100) !important;
+    color: var(--color-gray-600) !important;
+}
+#contactModal .avatar-cont
+{
+    margin-bottom: 1.25rem;
+}
+#contactModal .avatar-cont label
+{
+    background-color: var(--color-gray-100);
+    cursor: pointer;
+    transition: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+}
+#contactModal .avatar-cont label:hover
+{
+    background-color: rgb(229, 231, 235);
+}
+#contactModal #avatarPreview
+{
+    width: 6rem;
+    height: 6rem;
+    background-image: linear-gradient(to right bottom, rgb(81, 162, 255) 0%, rgb(21, 93, 251) 100%);
+    font-size: 1.875rem;
+}
+#contactModal .contact-info input,
+#contactModal .contact-info select,
+#contactModal .contact-info textarea
+{
+   padding-block: .75rem;
+   border: .0625rem solid rgb(209, 213, 219);
+   background-color: rgb(249, 250, 251);
+   outline: 0;
+   transition: border 0.15s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+}
+#contactModal .contact-info input::placeholder,
+#contactModal .contact-info select::placeholder,
+#contactModal .contact-info textarea::placeholder
+{
+    font-size: .875rem;
+    font-weight: 300;
+    font-style: normal;
+}
+#contactModal .contact-info input:not(input[type="checkbox"]):focus,
+#contactModal .contact-info select:focus,
+#contactModal .contact-info textarea:focus
+{
+    background-color: white;
+    border: .0625rem solid rgb(142, 81, 255) !important;
+    box-shadow: 0px 0px 0px 2px rgba(142, 81, 255, 0.2);
+}
+#contactModal .contact-info select
+{
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+#contactModal .contact-info textarea
+{
+    resize: none;
+}
+#contactModal .contact-info div:not(:last-of-type)
+{
+    margin-bottom: 1.25rem;
+}
+#contactModal .contact-info input[type="checkbox"]
+{
+    width: 1.25rem;
+    height: 1.25rem;
+}
+#contactModal .contact-info label:has(input[type="checkbox"]),
+#contactModal .contact-info input[type="checkbox"]
+{
+    cursor: pointer;
+}
+#contactModal .contact-info label:has(input[type="checkbox"]) i.fa-heart-pulse
+{
+    color: rgb(255, 32, 86);
+}
+#contactModal .contact-info label:has(input[type="checkbox"]) i.fa-star
+{
+    color: rgb(255, 185, 0);
+}
+#contactModal .contact-info .modalFooter
+{
+    gap: .75rem;
+}
+#contactModal .contact-info button#cancelModalBtn
+{
+    background-color: var(--color-gray-100);
+    padding: 12px 20px;
+    transition: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+}
+#contactModal .contact-info button#cancelModalBtn:hover
+{
+    background-color: rgb(229, 231, 235);
+}
+#contactModal .contact-info button#saveModalBtn
+{
+    background-image: linear-gradient(to right, rgb(127, 34, 254) 0%, rgb(79, 57, 246) 100%);
+    padding: 12px 20px;
+    transition: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+}
+#contactModal .contact-info button#saveModalBtn:hover
+{
+   box-shadow: 0 10px 15px -3px rgba(142, 81, 255, 0.251), 0 4px 6px -4px rgba(142, 81, 255, 0.251);
+}
+#contactModal .contact-info .modalFooter button
+{
+    flex: 1;
+}
+/* Main Section */
+#main-content
+{
+    padding-block: 2rem;
+}
+#main-content #quick-stats
+{
+    margin-bottom: 2rem;
+}
+#main-content #quick-stats .stats-card .stats-icon
+{
+    width: 3rem;
+    height: 3rem;
+}
+#main-content #quick-stats .stats-card
+{
+    border: .0625rem solid var(--color-gray-100);
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.102), 0 1px 2px -1px rgba(0, 0, 0, 0.102);
+}
+#main-content #quick-stats .stats-card:hover
+{
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.102), 0 2px 4px -2px rgba(0, 0, 0, 0.102);
+}
+#main-content #contactsHeader
+{
+    margin-bottom: 1.25rem;
+}
+#main-content #contactsHeader h2
+{
+    font-size: 1.875rem;
+    letter-spacing: .0313rem;
+}
+#main-content #contactsHeader #searchInput
+{
+   padding: .875rem 1rem .875rem 2.75rem;
+   border: .0625rem solid rgb(229, 231, 235) ;
+   background-color: white;
+   outline: 0;
+   transition: border 0.15s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+}
+#main-content #contactsHeader #searchInput::placeholder
+{
+    font-size: .875rem;
+    font-weight: 300;
+    font-style: normal;
+    color: var(--color-gray-400);
+}
+#main-content #contactsHeader #searchInput:focus
+{
+    border-color: rgb(142, 81, 255) !important;
+    box-shadow: 0px 0px 0px 2px rgba(142, 81, 255, 0.2);
+}
+#main-content #contactsHeader .header
+{
+    margin-bottom: 1.25rem;
+}
+#main-content #contactCardContainer .avatar-container
+{
+    width: 3.5rem;
+    height: 3.5rem;
+}
+#main-content #contactCardContainer .avatar-container .avatar-initials
+{
+    width: 3.5rem;
+    height: 3.5rem;
+    font-size: 1.125rem;
+    font-weight: 500;
+    font-style: normal;
+}
+#main-content #contactCardContainer .avatar-container .badge-star
+{
+    width: 1.25rem;
+    height: 1.25rem;
+    background-color: rgb(255, 185, 0);
+    box-shadow: 0px 0px 0px 2px white;
+    font-size: .5rem;
+    top: -2px;
+    right: -2px;
+}
+#main-content #contactCardContainer .avatar-container .badge-heart
+{
+    width: 1.25rem;
+    height: 1.25rem;
+    background-color: var(--color-rose-500);;
+    box-shadow: 0px 0px 0px 2px white;
+    font-size: .5rem;
+    bottom: -2px;
+    right: -2px;
+}
+#main-content #contactCardContainer .avatar-container i
+{
+    font-size: .5rem;
+}
+#main-content #contactCardContainer .card-title
+{
+    gap: .875rem;
+}
+#main-content #contactCardContainer .card-title .phone-icon
+{
+    width: 1.5rem;
+    height: 1.5rem;
+    background-color: var(--color-blue-100);
+    color: rgb(21, 93, 251);
+    box-shadow: 0px 0px 0px 2px white;
+    font-size: .5625rem;
+}
+#main-content #contactCardContainer .card-body
+{
+    padding-block: 1rem .75rem;
+}
+#main-content #contactCardContainer .card-body .contact-info
+{
+   margin-top: .75rem;
+}
+#main-content #contactCardContainer .card-body .info-tags
+{
+   margin-top: .75rem;
+}
+
+
+.friends {
+  background: rgb(220, 252, 231);
+  color: rgb(0, 130, 53);
+}
+.family {
+  background: var(--color-blue-100);
+  color: var(--color-blue-700);
+}
+.work {
+  background: rgb(243, 232, 255);
+  color: rgb(130, 0, 219);
+}
+.school {
+  background: rgb(254, 243, 198);
+  color: rgb(187, 77, 0);
+}
+.other {
+  background: var(--color-gray-100);
+  color: var(--color-gray-700);
+}
+
+
+#main-content #contactCardContainer .card-body .email-info,
+#main-content #contactCardContainer .card-body .address-info
+{
+   gap: .625rem;
+}
+#main-content #contactCardContainer .contact-card
+{
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.102), 0 1px 2px -1px rgba(0, 0, 0, 0.102);
+    border: .0625rem solid rgb(243, 244, 246);
+}
+#main-content #contactCardContainer .contact-card:hover
+{
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.102), 0 4px 6px -4px rgba(0, 0, 0, 0.102) !important;
+}
+#main-content #contactCardContainer .contact-card .card-footer
+{
+   padding-block: .625rem;
+   background-color: rgba(249, 250, 251, 0.8);
+   border-top: 1px solid var(--color-gray-100);
+}
+#main-content #contactCardContainer .contact-card .card-footer a,
+#main-content #contactCardContainer .contact-card .card-footer button
+{
+    width: 2.25rem;
+    height: 2.25rem;
+}
+#main-content #contactCardContainer .contact-card .card-footer a[title="Call"]
+{
+    background-color: rgb(236, 253, 245);
+}
+#main-content #contactCardContainer .contact-card .card-footer a[title="Call"]:hover
+{
+    background-color: var(--color-emerald-100);
+}
+#main-content #contactCardContainer .contact-card .card-footer a[title="Email"]
+{
+    background-color: rgb(245, 243, 255);
+}
+#main-content #contactCardContainer .contact-card .card-footer a[title="Email"]:hover
+{
+    background-color: var(--color-violet-100);
+}
+#main-content #contactCardContainer .contact-card .card-footer button[title="Favorite"]
+{
+    color: rgb(255, 185, 0);
+    background-color: rgb(255, 251, 235);
+}
+#main-content #contactCardContainer .contact-card .card-footer button[title="Favorite"]:hover
+{
+    background-color: rgb(254, 243, 198);
+}
+#main-content #contactCardContainer .contact-card .card-footer button.favUnchecked:hover
+{
+    color: rgb(255, 185, 0);
+    background-color: var(--color-gray-100) !important;
+}
+#main-content #contactCardContainer .contact-card .card-footer button[title="Emergency"]
+{
+    color: rgb(255, 32, 86);
+    background-color: rgb(255, 241, 242);
+}
+#main-content #contactCardContainer .contact-card .card-footer button[title="Emergency"]:hover
+{
+    background-color: rgb(255, 228, 230);
+}
+#main-content #contactCardContainer .contact-card .card-footer button.emergUnchecked:hover
+{
+    color: var(--color-rose-500);
+    background-color: var(--color-gray-100) !important;
+}
+#main-content #contactCardContainer .contact-card .card-footer button[title="Edit"]
+{
+    background-color: oklch(98.5% .002 247.839);
+}
+#main-content #contactCardContainer .contact-card .card-footer button[title="Edit"]:hover
+{
+    color: rgb(79, 57, 246);
+    background-color: rgb(238, 242, 255);
+}
+#main-content #contactCardContainer .contact-card .card-footer button[title="Delete"]
+{
+    background-color: oklch(98.5% .002 247.839);
+}
+#main-content #contactCardContainer .contact-card .card-footer button[title="Delete"]:hover
+{
+    color: var(--color-rose-600);
+    background-color: rgb(255, 241, 242);
+}
+
+/* Aside Section */
+aside
+{
+    width: 20rem;
+    top: 7rem;
+}
+#main-content aside #favoritesContent,
+#main-content aside #emergencyContent
+{
+    max-height: 20rem;
+    scrollbar-width: none;
+}
+#main-content aside #favoritesContacts
+{
+    margin-bottom: 1.25rem;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.102), 0 1px 2px -1px rgba(0, 0, 0, 0.102);
+}
+#main-content aside #favoritesContacts .card-fav-header
+{
+    padding-inline: 1.25rem;
+    background-image: linear-gradient(to right, rgb(255, 251, 235) 0%, rgb(255, 247, 237) 100%);
+    scrollbar-width: 0;
+}
+#main-content aside #emergencyContacts
+{
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.102), 0 1px 2px -1px rgba(0, 0, 0, 0.102);
+}
+#main-content aside #emergencyContacts .card-emerg-header
+{
+    padding-inline: 1.25rem;
+    background-image: linear-gradient(to right, rgb(255, 241, 242) 0%, rgb(254, 242, 242) 100%);
+}
+#main-content aside .card-body
+{
+    padding-block: 2rem;
+}
+#main-content aside #favoritesContent #fav-card
+{
+    padding: .625rem;
+    transition: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+}
+#main-content aside #favoritesContent #fav-card a
+{
+    width: 2rem;
+    height: 2rem;
+    transition: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+}
+#main-content aside #favoritesContent #fav-card:hover
+{
+    background-color: rgb(255, 251, 235);
+    cursor: pointer;
+}
+#main-content aside #favoritesContent #fav-card:hover a
+{
+    background-color: rgb(0, 188, 125);
+    color: white;
+}
+#main-content aside #emergencyContent #emerg-card
+{
+    padding: .625rem;
+    transition: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+}
+#main-content aside #emergencyContent #emerg-card a
+{
+    width: 2rem;
+    height: 2rem;
+    background-color: rgb(255, 228, 230);
+    color: var(--color-rose-600);
+    transition: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+}
+#main-content aside #emergencyContent #emerg-card:hover
+{
+    background-color: var(--color-rose-50);
+    cursor: pointer;
+}
+#main-content aside #emergencyContent #emerg-card:hover a
+{
+    background-color: var(--color-rose-500);
+    color: white;
+}
+
+/* SweetAlert */
