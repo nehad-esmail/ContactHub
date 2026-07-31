@@ -23,6 +23,11 @@ var addContactBtn = document.getElementById("addContactBtn");
 var saveModalBtn = document.getElementById("saveModalBtn");
 var favoritesContent = document.getElementById("favoritesContent");
 var emergencyContent = document.getElementById("emergencyContent");
+var phoneInput = document.getElementById("phoneInput");
+var nameInput = document.getElementById("nameInput");
+var nameError = document.getElementById("nameError");
+var phoneError = document.getElementById("phoneError");
+var modalBody = document.querySelector(".modalBody")
 
 // User form data
 
@@ -52,6 +57,27 @@ cancelModalBtn.addEventListener("click", function(){
   contactModal.classList.add("d-none");
   clearForm();
 });
+contactName.addEventListener("input", function(){
+  if (contactName.value.trim()){
+    contactName.classList.remove("border-alert");
+    nameError.classList.add("d-none");
+  }
+  // else{
+  //   contactName.classList.add("border-alert");
+  //   nameError.classList.remove("d-none");
+  // }
+})
+contactPhone.addEventListener("input", function(){
+  if(contactPhone.value.trim()){
+    contactPhone.classList.remove("border-alert");
+    phoneError.classList.add("d-none");
+  }
+  // else{
+  //   contactPhone.classList.add("border-alert");
+  //   phoneError.classList.remove("d-none");
+
+  // }
+})
 
 // function closeModal() {
 //   contactModal.classList.toggle("d-none");
@@ -73,17 +99,54 @@ function addContact(){
     userImage: avatarPath.value,
     userColor: avatarGradients[Math.floor(Math.random() * avatarGradients.length)]
   };
-  contactDataList.push(contactInfo);
-  localStorage.setItem("contacts", JSON.stringify(contactDataList));
 
-Swal.fire({
-        icon: "success",
-        title: "Added!",
-        text: "Contact has been added successfully.",
-        timer: 1500,
-        showConfirmButton: false
-    });
-};
+  // Username or Userphone validation
+  var isValid = true;
+
+  if (!contactName.value.trim()){
+    contactName.classList.add("border-alert");
+    nameError.classList.remove("d-none");
+    // contactName.focus();
+    isValid = false;
+  }
+  else{
+    contactName.classList.remove("border-alert");
+    nameError.classList.add("d-none");
+  }
+  if (!contactPhone.value.trim()){
+    contactPhone.classList.add("border-alert");
+    phoneError.classList.remove("d-none");
+    // contactPhone.focus();
+    isValid = false;
+  }
+  else{
+    contactPhone.classList.remove("border-alert");
+    phoneError.classList.add("d-none");
+  }
+
+  if(!isValid){
+    if (!contactName.value.trim()){
+      // contactName.focus();
+      modalBody.scrollTo({
+        top: 0,
+        behavior: "smooth"
+      })
+    }
+    return false;
+  }
+
+    contactDataList.push(contactInfo);
+    localStorage.setItem("contacts", JSON.stringify(contactDataList));
+  
+  Swal.fire({
+          icon: "success",
+          title: "Added!",
+          text: "Contact has been added successfully.",
+          timer: 1500,
+          showConfirmButton: false
+      });
+    return true;
+}
 
 function clearForm(){
   contactName.value ="";
@@ -103,8 +166,12 @@ function clearForm(){
 };
 
 function getInitials(userName){
-  console.log(userName);
-  var name = userName.trim().split(" ");
+  //.....Console Error Fix.....//
+  if (!userName.trim()){
+    return "";
+  }
+  //
+  var name = userName.trim().split(/\s+/); // Used regex to handle multiple whitespace, preventing toUpperCase() function errors
   if (name.length === 1){
     return name[0][0].toUpperCase();
   }
@@ -374,7 +441,7 @@ function displayEmergency(){
                                     <h4 class="mb-0 fs-14 lh-base fw-semibold text-gray-900">${currentEmergContact.userName}</h4>
                                     <p class="mb-0 fs-12 lh-base fw-light text-gray-500">${currentEmergContact.userPhone}</p>
                                 </div>
-                                <a href="tel:+" class="d-flex align-items-center justify-content-center text-decoration-none rounded-3">
+                                <a href="tel:${currentEmergContact.userPhone}" class="d-flex align-items-center justify-content-center text-decoration-none rounded-3">
                                     <i class="fa-solid fa-phone fs-12"></i>
                                 </a>
                             </div>
@@ -503,10 +570,12 @@ console.log(contactDataList[currentUpdateIndex]);
 contactForm.addEventListener("submit", function(e){
   e.preventDefault();
   if (currentUpdateIndex===null) {
-    addContact();
+    if(!addContact()){
+      return;
+    }
     contactModal.classList.add("d-none");
-
   }
+ 
   else{
     updateContact();
      contactModal.classList.add("d-none");
@@ -556,12 +625,25 @@ function searchContacts() {
     var contact = contactDataList[i];
 
     if(
-      contact.userName.toLowerCase().includes(searchValue) ||
-      contact.userEmail.toLowerCase().includes(searchValue) ||
+      contact.userName.toLowerCase().startsWith(searchValue) ||
+      contact.userEmail.toLowerCase().startsWith(searchValue) ||
       contact.userPhone.toLowerCase().includes(searchValue)
     ){      
       cardContainer+= createContactCard(contact,i);     
     }   
+  }
+  if (cardContainer === "") {
+    cardContainer = `
+      <div class="col-12 text-center py-80">
+        <div class="bg-gray-100 rounded-4 p-4 d-inline-flex align-items-center justify-content-center mx-auto mb-3" style="width: 80px; height: 80px;">
+          <i class="fas fa-address-book fs-2 text-gray-300"></i>
+        </div>
+        <p class="text-gray-500 fw-normal lh-base m-0">No contacts found</p>
+        <p class="text-gray-400 fs-14 lh-base fw-light mt-1 mb-0">
+          Try another search or add a new contact.
+        </p>
+      </div>
+    `;
   }
 
   contactCardContainer.innerHTML = cardContainer;

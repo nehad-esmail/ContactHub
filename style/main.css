@@ -354,6 +354,12 @@ header nav .img-cont
 {
     flex: 1;
 }
+#contactModal .contact-info #nameError,
+#contactModal .contact-info #phoneError
+{
+    margin-top: 6px;
+}
+
 /* Main Section */
 #main-content
 {
@@ -667,4 +673,8 @@ aside
     color: white;
 }
 
-/* SweetAlert */
+ /* Validation */
+ .border-alert
+ {
+    border-color: rgb(251, 44, 54) !important;
+ }
